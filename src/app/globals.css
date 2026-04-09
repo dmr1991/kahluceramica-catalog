@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #ede0d4; /* arena */
+  color: #3d3428; /* carbon */
+}
