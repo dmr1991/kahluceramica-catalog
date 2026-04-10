@@ -1,85 +1,117 @@
 "use client";
 
-import { useState } from "react";
-// Importante: Si lo pusiste en layout.tsx, puedes quitar el <Navbar /> de aquí abajo.
-// Pero lo dejamos aquí para asegurar que Vercel encuentre la ruta.
-import Navbar from "@/components/Navbar";
-import { products } from "@/data/products";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import ProductSection from "@/components/ProductSection";
+import { products } from "@/data/products";
 
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section - Estilo Artesanal */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black/5 z-10" />
-          {/* Aquí puedes poner una imagen de tus cerámicas después */}
-          <div className="w-full h-full bg-arena/30 flex items-center justify-center text-arcilla/20">
-            <span className="font-serif text-[15vw] uppercase tracking-tighter opacity-10">
-              Kahlu
-            </span>
-          </div>
-        </div>
+  const featured = products.filter((p) => p.isFeatured);
+  const newPieces = products.filter((p) => p.isNew);
 
-        <div className="relative z-20 text-center px-6">
-          <h1 className="text-5xl md:text-7xl font-serif font-light mb-6 tracking-tight text-carbon">
-            KAHLU <span className="italic">Cerámica</span>
+  return (
+    <div className="min-h-screen">
+      {/* Hero - El diseño elegante de Lovable */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1600&h=900&fit=crop')",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+        <div className="relative z-10 text-center text-white px-6">
+          <p className="text-xs md:text-sm tracking-[0.5em] uppercase mb-4 opacity-80">
+            Cerámica artesanal
+          </p>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.2em] mb-6 font-serif">
+            KAHLU
           </h1>
-          <p className="text-lg md:text-xl font-light tracking-widest uppercase text-carbon-light mb-8 max-w-xl mx-auto">
-            Objetos atemporales hechos a mano para el hogar.
+          <p className="text-sm md:text-base font-light tracking-wider max-w-md mx-auto mb-10 opacity-90">
+            Piezas únicas hechas a mano, donde la tierra se transforma en arte
           </p>
           <Link
             href="/catalog"
-            className="inline-block border border-carbon px-10 py-4 text-xs tracking-[0.3em] uppercase hover:bg-carbon hover:text-white transition-all duration-500"
+            className="inline-flex items-center gap-3 border border-white/60 px-8 py-3 text-xs tracking-[0.3em] uppercase hover:bg-white/10 transition-colors"
           >
-            Explorar Catálogo
+            Explorar catálogo
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
 
-      {/* Grid de Productos Destacados */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="flex justify-between items-end mb-12">
-          <h2 className="text-3xl font-serif italic text-carbon">
-            Colección Reciente
+      {/* Colección Destacada */}
+      <ProductSection
+        title="Colección Destacada"
+        subtitle="Lo mejor de nuestro taller"
+        products={featured.slice(0, 4)}
+        linkTo="/catalog"
+      />
+
+      {/* Divider quote - Estética artesanal */}
+      <section className="py-20 md:py-28 bg-stone-50">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-2xl md:text-3xl font-light italic leading-relaxed text-stone-600 font-serif">
+            "Cada pieza lleva consigo la huella del fuego, la paciencia del
+            torno y la intención de quien la crea."
+          </p>
+        </div>
+      </section>
+
+      {/* Nuevas Piezas */}
+      <ProductSection
+        title="Nuevas Piezas"
+        subtitle="Recién salidas del horno"
+        products={newPieces.slice(0, 4)}
+        linkTo="/catalog"
+      />
+
+      {/* CTA final */}
+      <section className="py-20 md:py-28 bg-white text-center">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-light mb-4 font-serif text-stone-800">
+            Todas las piezas disponibles
           </h2>
+          <p className="text-stone-500 text-sm mb-8 max-w-md mx-auto">
+            Explora nuestro catálogo completo y encuentra la pieza perfecta para
+            tu espacio
+          </p>
           <Link
             href="/catalog"
-            className="text-xs tracking-widest uppercase border-b border-carbon pb-1"
+            className="inline-flex items-center gap-3 bg-stone-800 text-white px-8 py-3 text-xs tracking-[0.3em] uppercase hover:bg-stone-700 transition-colors"
           >
-            Ver todo
+            Ver catálogo completo
+            <ArrowRight className="w-4 h-4" />
           </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {products.slice(0, 3).map((product) => (
-            <div key={product.id} className="group cursor-pointer">
-              <div className="aspect-[4/5] overflow-hidden bg-crema mb-4 relative">
-                {/* Placeholder de imagen */}
-                <div className="w-full h-full bg-arena/20 group-hover:scale-105 transition-transform duration-700 ease-out" />
-                {product.isNew && (
-                  <span className="absolute top-4 left-4 text-[10px] tracking-widest uppercase bg-white px-2 py-1">
-                    Nuevo
-                  </span>
-                )}
-              </div>
-              <h3 className="font-serif text-xl text-carbon mb-1">
-                {product.name}
-              </h3>
-              <p className="text-sm text-carbon-light font-light tracking-wide">
-                ${product.price}
-              </p>
-            </div>
-          ))}
         </div>
       </section>
 
-      {/* Footer Minimalista */}
-      <footer className="border-t border-border/50 py-12 text-center">
-        <p className="text-[10px] tracking-[0.4em] uppercase text-carbon-light">
-          © 2026 KAHLU CERÁMICA — Hecho con intención.
-        </p>
+      {/* Footer minimalista */}
+      <footer className="border-t border-stone-100 py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-[10px] tracking-[0.4em] uppercase text-stone-400">
+            © 2026 KAHLU CERÁMICA
+          </p>
+          <div className="flex items-center gap-6 text-[10px] tracking-widest uppercase text-stone-400">
+            <a
+              href="mailto:hola@kahluceramica.com"
+              className="hover:text-stone-800 transition-colors"
+            >
+              Email
+            </a>
+            <a
+              href="https://instagram.com/kahluceramica"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-stone-800 transition-colors"
+            >
+              Instagram
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
