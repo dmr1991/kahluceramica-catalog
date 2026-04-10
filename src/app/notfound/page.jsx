@@ -1,5 +1,4 @@
-"use client"; // ✅ 1. Esto arregla el error de useEffect
-
+"use client"; 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation"; // ✅ 2. Cambiamos useLocation por usePathname
 import Link from "next/link";

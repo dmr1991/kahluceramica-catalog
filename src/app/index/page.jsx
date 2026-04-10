@@ -34,7 +34,7 @@ const Index = () => {
             Piezas únicas hechas a mano, donde la tierra se transforma en arte
           </p>
           <Link
-            to="/catalogo"
+            href="/catalog"
             className="inline-flex items-center gap-3 border border-background/60 px-8 py-3 text-xs tracking-[0.3em] uppercase hover:bg-background/10 transition-colors"
           >
             Explorar catálogo
@@ -48,7 +48,7 @@ const Index = () => {
         title="Colección Destacada"
         subtitle="Lo mejor de nuestro taller"
         products={featured.slice(0, 4)}
-        linkTo="/catalogo"
+        link href="/catalog"
       />
 
       {/* Divider quote */}
@@ -68,7 +68,7 @@ const Index = () => {
         title="Nuevas Piezas"
         subtitle="Recién salidas del horno"
         products={newPieces.slice(0, 4)}
-        linkTo="/catalogo"
+        link href="/catalog"
       />
 
       {/* CTA - Ver todo */}
@@ -84,7 +84,7 @@ const Index = () => {
             Explora nuestro catálogo completo y encuentra la pieza perfecta para tu espacio
           </p>
           <Link
-            to="/catalogo"
+            href="/catalog"
             className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-3 text-xs tracking-[0.3em] uppercase hover:bg-primary/90 transition-colors rounded-sm"
           >
             Ver catálogo completo
