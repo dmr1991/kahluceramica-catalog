@@ -1,101 +1,77 @@
+"use client"; // ✅ ESTO ARREGLA LOS ERRORES 1 Y 2
+
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import {
-  ArrowLeft,
-  Mail,
-  Instagram,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { ArrowLeft, Mail, ChevronLeft, ChevronRight } from "lucide-react"; // ✅ QUITAMOS INSTAGRAM DE AQUÍ
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { products } from "@/data/products";
 
+const InstagramIcon = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
 const ProductDetail = () => {
   const { id } = useParams();
-  const product = products.find((p) => p.id === id);
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Buscamos el producto por ID
+  const product = products.find((p) => String(p.id) === id);
 
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p>Producto no encontrado</p>
+        <p className="font-serif italic">Pieza no encontrada...</p>
       </div>
     );
   }
 
-  const emailSubject = encodeURIComponent(
-    `Consulta: ${product.name} (${product.code})`,
-  );
-  const emailBody = encodeURIComponent(
-    `Hola Kahlu,\n\nMe interesa la pieza:\n\nNombre: ${product.name}\nCódigo: ${product.code}\nPrecio: $${product.price} USD\n\n¿Podrían darme más información?\n\nGracias`,
-  );
-
-  const prevImage = () =>
-    setCurrentImage((i) => (i === 0 ? product.images.length - 1 : i - 1));
-  const nextImage = () =>
-    setCurrentImage((i) => (i === product.images.length - 1 ? 0 : i + 1));
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="pt-24 pb-20 max-w-7xl mx-auto px-6">
+
+      <main className="max-w-7xl mx-auto px-6 pt-32 pb-20">
         <Link
-          to="/catalogo"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+          href="/catalog"
+          className="inline-flex items-center gap-2 text-xs tracking-widest uppercase mb-12 hover:opacity-60 transition-opacity"
         >
           <ArrowLeft className="w-4 h-4" /> Volver al catálogo
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          {/* Image carousel — takes ~55% on large screens */}
-          <div className="lg:col-span-1">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-muted">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Galería de Imágenes */}
+          <div className="space-y-4">
+            <div className="aspect-[4/5] bg-crema overflow-hidden relative">
               <img
-                src={product.images[currentImage]}
-                alt={`${product.name} - imagen ${currentImage + 1}`}
+                src={product.images[currentImageIndex]}
+                alt={product.name}
                 className="w-full h-full object-cover"
               />
-              {product.images.length > 1 && (
-                <>
-                  <button
-                    onClick={prevImage}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/70 backdrop-blur-sm flex items-center justify-center hover:bg-background/90 transition-colors"
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={nextImage}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/70 backdrop-blur-sm flex items-center justify-center hover:bg-background/90 transition-colors"
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
-                </>
-              )}
-              {/* Dots */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                {product.images.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentImage(i)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      i === currentImage ? "bg-background" : "bg-background/40"
-                    }`}
-                  />
-                ))}
-              </div>
             </div>
-
-            {/* Thumbnails */}
             {product.images.length > 1 && (
-              <div className="flex gap-3 mt-4">
-                {product.images.map((img, i) => (
+              <div className="grid grid-cols-4 gap-4">
+                {product.images.map((img, index) => (
                   <button
-                    key={i}
-                    onClick={() => setCurrentImage(i)}
-                    className={`w-16 h-20 rounded-sm overflow-hidden border-2 transition-colors ${
-                      i === currentImage
-                        ? "border-primary"
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`aspect-square bg-crema overflow-hidden border ${
+                      currentImageIndex === index
+                        ? "border-carbon"
                         : "border-transparent"
                     }`}
                   >
@@ -110,67 +86,48 @@ const ProductDetail = () => {
             )}
           </div>
 
-          {/* Product details */}
+          {/* Información del Producto */}
           <div className="flex flex-col justify-center">
-            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-1">
-              {product.collection}
-            </p>
-            <p className="text-xs tracking-widest text-muted-foreground mb-4">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-carbon-light/60 mb-2">
               {product.code}
             </p>
-            <h1
-              className="text-3xl md:text-4xl font-light mb-2"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
-            >
+            <h1 className="text-4xl md:text-5xl font-serif font-light text-carbon mb-6 tracking-tight">
               {product.name}
             </h1>
-            <p className="text-xl text-muted-foreground mb-6">
-              ${product.price} USD
-            </p>
+            <p className="text-xl text-carbon mb-8">${product.price} USD</p>
 
-            <p className="text-sm leading-relaxed text-muted-foreground mb-8">
-              {product.description}
-            </p>
-
-            <div className="mb-10">
-              <p className="text-xs tracking-[0.2em] uppercase mb-3">
-                Detalles
+            <div className="prose prose-sm text-carbon-light font-light leading-relaxed mb-12">
+              <p>
+                {product.description ||
+                  "Una pieza única hecha a mano con arcilla de alta temperatura, terminada con esmaltes orgánicos que resaltan la belleza de lo imperfecto."}
               </p>
-              <ul className="space-y-2">
-                {product.details.map((detail, i) => (
-                  <li
-                    key={i}
-                    className="text-sm text-muted-foreground flex items-start gap-2"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-secondary mt-2 shrink-0" />
-                    {detail}
-                  </li>
-                ))}
-              </ul>
             </div>
 
-            {/* Contact CTAs */}
-            <div className="space-y-3">
-              <a
-                href={`mailto:hola@kahluceramica.com?subject=${emailSubject}&body=${emailBody}`}
-                className="flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-3 text-xs tracking-[0.2em] uppercase hover:bg-primary/90 transition-colors rounded-sm w-full"
-              >
-                <Mail className="w-4 h-4" />
-                Consultar por email
-              </a>
-              <a
-                href="https://instagram.com/kahluceramica"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 border border-border px-6 py-3 text-xs tracking-[0.2em] uppercase hover:bg-muted transition-colors rounded-sm w-full"
-              >
-                <Instagram className="w-4 h-4" />
-                Escribir por Instagram
-              </a>
+            <div className="space-y-6">
+              <button className="w-full bg-carbon text-white py-4 text-xs tracking-[0.3em] uppercase hover:bg-carbon/90 transition-colors">
+                Consultar disponibilidad
+              </button>
+
+              <div className="flex items-center justify-center gap-8 pt-6">
+                <a
+                  href="mailto:hola@kahluceramica.com"
+                  className="hover:opacity-50 transition-opacity"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://instagram.com/kahluceramica"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-50 transition-opacity"
+                >
+                  <InstagramIcon className="w-5 h-5" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
