@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link"; // ✅ Corregido
+import Link from "next/link"; 
 import { ArrowRight } from "lucide-react";
 import type { Product } from "@/data/products";
 import ProductCard from "./ProductCard";
