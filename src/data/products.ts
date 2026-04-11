@@ -1,8 +1,22 @@
+// 1. DEFINIMOS LA "VERDAD ÚNICA" DE LAS CATEGORÍAS
+// Si quieres cambiar un nombre, lo haces aquí y se actualiza en todo el sitio.
+export const PRODUCT_CATEGORIES = {
+  TAZAS: "Tazas",
+  DECORACION: "Decoración",
+  SETS: "Sets",
+  PLATOS: "Platos",
+} as const;
+
+// Esto crea un tipo para que TypeScript solo acepte estas categorías
+export type Category = typeof PRODUCT_CATEGORIES[keyof typeof PRODUCT_CATEGORIES];
+
 export interface Product {
   id: string;
   code: string;
   name: string;
   price: number;
+  category: Category; // ✅ Ahora usa el tipo restringido
+  date: string;       // ✅ Stamp para "Más recientes"
   collection: string;
   description: string;
   details: string[];
@@ -17,6 +31,8 @@ export const products: Product[] = [
     code: "KHL-0001",
     name: "Vasija Luna Creciente",
     price: 185,
+    category: PRODUCT_CATEGORIES.DECORACION, // ✅ Uso de constante
+    date: "2026-03-15",
     collection: "Colección Tierra",
     description: "Vasija artesanal torneada a mano con esmalte mineral en tonos arena. Cada pieza es única.",
     details: ["Cerámica de alta temperatura", "Esmalte mineral natural", "Altura: 28cm", "Diámetro: 15cm"],
@@ -32,6 +48,8 @@ export const products: Product[] = [
     code: "KHL-0002",
     name: "Plato Onda Marina",
     price: 95,
+    category: PRODUCT_CATEGORIES.TAZAS,
+    date: "2026-03-10",
     collection: "Colección Tierra",
     description: "Plato decorativo con textura ondulada inspirada en las corrientes marinas.",
     details: ["Cerámica gres", "Esmalte reactivo", "Diámetro: 30cm", "Apto para alimentos"],
@@ -46,6 +64,8 @@ export const products: Product[] = [
     code: "KHL-0003",
     name: "Taza Amanecer",
     price: 48,
+    category: PRODUCT_CATEGORIES.TAZAS,
+    date: "2026-03-05",
     collection: "Colección Tierra",
     description: "Taza con asa orgánica y esmalte degradado en tonos cálidos de terracota.",
     details: ["Cerámica gres", "Capacidad: 350ml", "Apta para microondas", "Lavado a mano recomendado"],
@@ -60,6 +80,8 @@ export const products: Product[] = [
     code: "KHL-0010",
     name: "Jarrón Duna",
     price: 220,
+    category: PRODUCT_CATEGORIES.DECORACION,
+    date: "2026-04-09",
     collection: "Nuevas Piezas",
     description: "Jarrón escultórico con formas fluidas que evocan dunas del desierto.",
     details: ["Cerámica de alta temperatura", "Acabado mate", "Altura: 35cm", "Pieza decorativa"],
@@ -74,6 +96,8 @@ export const products: Product[] = [
     code: "KHL-0011",
     name: "Bowl Raíz",
     price: 72,
+    category: PRODUCT_CATEGORIES.TAZAS,
+    date: "2026-04-05",
     collection: "Nuevas Piezas",
     description: "Bowl orgánico con textura rústica inspirada en raíces de árboles ancestrales.",
     details: ["Cerámica gres", "Esmalte natural", "Diámetro: 22cm", "Apto para alimentos"],
@@ -88,6 +112,8 @@ export const products: Product[] = [
     code: "KHL-0012",
     name: "Set Ritual del Té",
     price: 165,
+    category: PRODUCT_CATEGORIES.SETS,
+    date: "2026-04-01",
     collection: "Nuevas Piezas",
     description: "Set de tetera y dos tazas con acabado wabi-sabi. Para momentos de calma.",
     details: ["Cerámica gres", "Incluye tetera y 2 tazas", "Esmalte ceniza", "Hecho a mano"],
@@ -102,6 +128,8 @@ export const products: Product[] = [
     code: "KHL-0020",
     name: "Maceta Nido",
     price: 110,
+    category: PRODUCT_CATEGORIES.PLATOS,
+    date: "2026-02-20",
     collection: "Colección Tierra",
     description: "Maceta con textura tejida que abraza tus plantas con calidez artesanal.",
     details: ["Cerámica de baja temperatura", "Con drenaje", "Diámetro: 18cm", "Interior/exterior"],
@@ -114,6 +142,8 @@ export const products: Product[] = [
     code: "KHL-0021",
     name: "Candelabro Meditación",
     price: 58,
+    category: PRODUCT_CATEGORIES.DECORACION,
+    date: "2026-04-08",
     collection: "Nuevas Piezas",
     description: "Candelabro minimalista con líneas limpias para crear ambientes serenos.",
     details: ["Cerámica gres", "Para velas estándar", "Altura: 12cm", "Base antideslizante"],
