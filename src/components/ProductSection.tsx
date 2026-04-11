@@ -38,7 +38,7 @@ const ProductSection = ({
             </h2>
           </div>
           <Link
-            href={linkTo} // ✅ Corregido (to -> href)
+            href={linkTo} 
             className="hidden md:flex items-center gap-2 text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors group"
           >
             {linkLabel}
@@ -53,7 +53,7 @@ const ProductSection = ({
         </div>
 
         <Link
-          href={linkTo} // ✅ Corregido (to -> href)
+          href={linkTo} 
           className="md:hidden flex items-center justify-center gap-2 mt-10 text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
         >
           {linkLabel}

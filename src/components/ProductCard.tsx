@@ -6,7 +6,6 @@ import type { Product } from "@/data/products";
 const ProductCard = ({ product }: { product: Product }) => {
   return (
     <Link href={`/product/${product.id}`} className="group block"> 
-      {/* 👆 Cambié "to" por "href" y la ruta a "/product/" para que coincida con tu carpeta */}
       <div className="aspect-[3/4] overflow-hidden rounded-sm bg-muted mb-4">
         <img
           src={product.images[0]}

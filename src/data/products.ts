@@ -13,7 +13,7 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    id: "1",
+    id: "KHL-0001",
     code: "KHL-0001",
     name: "Vasija Luna Creciente",
     price: 185,
@@ -28,7 +28,7 @@ export const products: Product[] = [
     isFeatured: true,
   },
   {
-    id: "2",
+    id: "KHL-0002",
     code: "KHL-0002",
     name: "Plato Onda Marina",
     price: 95,
@@ -42,7 +42,7 @@ export const products: Product[] = [
     isFeatured: true,
   },
   {
-    id: "3",
+    id: "KHL-0003",
     code: "KHL-0003",
     name: "Taza Amanecer",
     price: 48,
@@ -56,7 +56,7 @@ export const products: Product[] = [
     isFeatured: true,
   },
   {
-    id: "4",
+    id: "KHL-0010",
     code: "KHL-0010",
     name: "Jarrón Duna",
     price: 220,
@@ -70,7 +70,7 @@ export const products: Product[] = [
     isNew: true,
   },
   {
-    id: "5",
+    id: "KHL-0011",
     code: "KHL-0011",
     name: "Bowl Raíz",
     price: 72,
@@ -84,7 +84,7 @@ export const products: Product[] = [
     isNew: true,
   },
   {
-    id: "6",
+    id: "KHL-0012",
     code: "KHL-0012",
     name: "Set Ritual del Té",
     price: 165,
@@ -98,7 +98,7 @@ export const products: Product[] = [
     isNew: true,
   },
   {
-    id: "7",
+    id: "KHL-0020",
     code: "KHL-0020",
     name: "Maceta Nido",
     price: 110,
