@@ -97,7 +97,7 @@ export default function Home() {
           </p>
           <div className="flex items-center gap-6 text-[10px] tracking-widest uppercase text-stone-400">
             <a
-              href="mailto:hola@kahluceramica.com"
+              href="mailto:kahluceramica@gmail.com"
               className="hover:text-stone-800 transition-colors"
             >
               Email

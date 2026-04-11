@@ -53,7 +53,7 @@ const Navbar = () => {
             Catálogo
           </Link>
           <a
-            href="mailto:hola@kahluceramica.com"
+            href="mailto:kahluceramica@gmail.com"
             className="hover:text-primary transition-colors"
           >
             <Mail className="w-4 h-4" />
@@ -92,7 +92,7 @@ const Navbar = () => {
             Catálogo
           </Link>
           <div className="flex gap-4 pt-2">
-            <a href="mailto:hola@kahluceramica.com">
+            <a href="mailto:kahluceramica@gmail.com">
               <Mail className="w-4 h-4" />
             </a>
             <a
