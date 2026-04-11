@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Mail, Menu, X } from "lucide-react";
 
-// Creamos un pequeño componente para el logo de Instagram
+// Componente para el logo de Instagram
 const InstagramIcon = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -74,33 +74,38 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu (Gaveta corregida) */}
       {open && (
-        <div className="md:hidden px-6 pb-6 space-y-4 bg-background/95 backdrop-blur-md border-b border-border/50">
+        <div className="md:hidden px-6 pt-12 pb-12 space-y-8 bg-background/95 backdrop-blur-md border-b border-border/50 animate-in fade-in slide-in-from-top-2 duration-300">
           <Link
             href="/"
-            className="block text-sm tracking-widest uppercase"
+            className="block text-sm tracking-[0.3em] uppercase text-carbon hover:opacity-50 transition-all"
             onClick={() => setOpen(false)}
           >
             Inicio
           </Link>
           <Link
             href="/catalog"
-            className="block text-sm tracking-widest uppercase"
+            className="block text-sm tracking-[0.3em] uppercase text-carbon hover:opacity-50 transition-all"
             onClick={() => setOpen(false)}
           >
             Catálogo
           </Link>
-          <div className="flex gap-4 pt-2">
-            <a href="mailto:kahluceramica@gmail.com">
-              <Mail className="w-4 h-4" />
+
+          <div className="flex gap-8 pt-4 border-t border-carbon/5">
+            <a
+              href="mailto:kahluceramica@gmail.com"
+              className="text-carbon/60 hover:text-carbon transition-colors"
+            >
+              <Mail className="w-5 h-5" />
             </a>
             <a
               href="https://instagram.com/kahluceramica"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-carbon/60 hover:text-carbon transition-colors"
             >
-              <InstagramIcon className="w-4 h-4" />
+              <InstagramIcon className="w-5 h-5" />
             </a>
           </div>
         </div>
