@@ -1,14 +1,12 @@
-"use client";
-
-import Link from "next/link"; 
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import type { Product } from "@/data/products";
+// Quitamos el import del tipo Product viejo porque ahora viene de Sanity
 import ProductCard from "./ProductCard";
 
 interface Props {
   title: string;
   subtitle?: string;
-  products: Product[];
+  products: any[]; // Cambiamos a any[] temporalmente para aceptar los datos de Sanity
   linkTo: string;
   linkLabel?: string;
 }
@@ -31,14 +29,14 @@ const ProductSection = ({
               </p>
             )}
             <h2
-              className="text-3xl md:text-4xl font-light tracking-wide"
+              className="text-3xl md:text-4xl font-light tracking-wide text-stone-800"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               {title}
             </h2>
           </div>
           <Link
-            href={linkTo} 
+            href={linkTo}
             className="hidden md:flex items-center gap-2 text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors group"
           >
             {linkLabel}
@@ -48,12 +46,13 @@ const ProductSection = ({
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            // IMPORTANTE: Cambiamos product.id por product._id
+            <ProductCard key={product._id} product={product} />
           ))}
         </div>
 
         <Link
-          href={linkTo} 
+          href={linkTo}
           className="md:hidden flex items-center justify-center gap-2 mt-10 text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
         >
           {linkLabel}

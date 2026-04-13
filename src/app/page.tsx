@@ -1,18 +1,21 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import ProductSection from "@/components/ProductSection";
-import { products } from "@/data/products";
+import { getProducts } from "@/sanity/lib/queries"; // Importamos la conexión
 
-export default function Home() {
-  const featured = products.filter((p) => p.isFeatured);
-  const newPieces = products.filter((p) => p.isNew);
+export default async function Home() {
+  // Traemos los productos reales de Sanity
+  const allProducts = await getProducts();
+
+  // Filtramos usando los campos que configuramos en el esquema
+  const featured = allProducts.filter((p: any) => p.isFeatured);
+  const newPieces = allProducts.filter((p: any) => p.isNew);
 
   return (
     <div className="min-h-screen">
-      {/* Hero - El diseño elegante de Lovable */}
+      <Navbar /> {/* Asegúrate de que el Navbar esté aquí si lo necesitas */}
+      {/* Hero - El diseño elegante de KAHLU */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -42,15 +45,13 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
-      {/* Colección Destacada */}
+      {/* Colección Destacada - Datos de Sanity */}
       <ProductSection
         title="Colección Destacada"
         subtitle="Lo mejor de nuestro taller"
         products={featured.slice(0, 4)}
         linkTo="/catalog"
       />
-
       {/* Divider quote - Estética artesanal */}
       <section className="py-20 md:py-28 bg-stone-50">
         <div className="max-w-3xl mx-auto px-6 text-center">
@@ -60,15 +61,13 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      {/* Nuevas Piezas */}
+      {/* Nuevas Piezas - Datos de Sanity */}
       <ProductSection
         title="Nuevas Piezas"
         subtitle="Recién salidas del horno"
         products={newPieces.slice(0, 4)}
         linkTo="/catalog"
       />
-
       {/* CTA final */}
       <section className="py-20 md:py-28 bg-white text-center">
         <div className="max-w-7xl mx-auto px-6">
@@ -88,7 +87,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
       {/* Footer minimalista */}
       <footer className="border-t border-stone-100 py-12 bg-white">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
