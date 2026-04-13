@@ -21,7 +21,7 @@ export default async function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1600&h=900&fit=crop')",
+              "url('/1_HERO_2026.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/40" />
