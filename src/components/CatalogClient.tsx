@@ -41,7 +41,7 @@ const CatalogClient = ({ initialProducts }: CatalogClientProps) => {
     <div className="pt-28 pb-20 max-w-7xl mx-auto px-6">
       {/* Encabezado */}
       <div className="mb-12">
-        <p className="font-sans text-xs tracking-[0.3em] uppercase text-stone-400 mb-2">
+        <p className="font-sans text-xs tracking-[0.3em] uppercase text-carbon mb-2">
           Catálogo
         </p>
         <h1
@@ -53,7 +53,7 @@ const CatalogClient = ({ initialProducts }: CatalogClientProps) => {
       </div>
 
       {/* Barra de Filtros */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-16 border-b border-stone-100 pb-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-16 pb-8">
         <div className="flex flex-wrap gap-x-8 gap-y-3">
           {categories.map((cat) => (
             <button
@@ -61,8 +61,8 @@ const CatalogClient = ({ initialProducts }: CatalogClientProps) => {
               onClick={() => setSelectedCategory(cat)}
               className={`font-sans text-[10px] tracking-[0.2em] uppercase transition-all ${
                 selectedCategory === cat
-                  ? "text-stone-800 border-b border-stone-800 pb-1"
-                  : "text-stone-400 hover:text-stone-800"
+                  ? "text-carbon border-b border-stone-800 pb-1"
+                  : "text-carbon-light hover:text-agua"
               }`}
             >
               {cat}
@@ -71,13 +71,13 @@ const CatalogClient = ({ initialProducts }: CatalogClientProps) => {
         </div>
 
         <div className="flex items-center gap-4">
-          <span className="font-sans text-[9px] tracking-[0.2em] uppercase text-stone-400">
+          <span className="font-sans text-[9px] tracking-[0.2em] uppercase text-carbon">
             Organizar:
           </span>
           <select
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
-            className="bg-transparent font-sans text-[10px] tracking-[0.2em] uppercase outline-none cursor-pointer text-stone-800 border-none focus:ring-0"
+            className="bg-transparent font-sans text-[10px] tracking-[0.2em] uppercase outline-none cursor-pointer text-stone-800 border-none focus:ring-0 hover:text-agua transition-colors"
           >
             <option value="recientes">Más recientes</option>
             <option value="precio-menor">Menor a mayor precio</option>

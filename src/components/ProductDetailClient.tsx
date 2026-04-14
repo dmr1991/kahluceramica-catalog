@@ -72,7 +72,7 @@ const ProductDetailClient = ({ product }: { product: any }) => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-stone-800">
+    <div className="min-h-screen bg-arena text-stone-800">
       <Navbar />
       <main className="max-w-7xl mx-auto px-6 pt-32 pb-20">
         <Link
@@ -85,7 +85,7 @@ const ProductDetailClient = ({ product }: { product: any }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Galería */}
           <div className="space-y-4">
-            <div className="aspect-[4/5] bg-stone-50 overflow-hidden relative border border-stone-100">
+            <div className="aspect-[4/5] bg-stone-50 overflow-hidden relative ">
               <img
                 src={images[currentImageIndex]}
                 alt={product.name}
@@ -113,7 +113,7 @@ const ProductDetailClient = ({ product }: { product: any }) => {
 
           {/* Info */}
           <div className="flex flex-col justify-center">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-2">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-carbon mb-2">
               {product.category}
             </p>
             <h1 className="text-4xl md:text-5xl font-serif font-light text-stone-800 mb-6 tracking-tight">
