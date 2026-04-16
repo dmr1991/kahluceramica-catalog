@@ -21,10 +21,10 @@ export default async function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1600&h=900&fit=crop')",
+              "url('./1_HERO_2026.jpg')", //IMAGEN DE HERO
           }}
         >
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/70" /> {/* Capa de oscurecimiento OVERLAY para mejorar la legibilidad */}
         </div>
         <div className="relative z-10 text-center text-white px-6">
           <p className="text-xs md:text-sm tracking-[0.5em] uppercase mb-4 opacity-80">
