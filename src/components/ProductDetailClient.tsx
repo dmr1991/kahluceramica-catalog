@@ -126,7 +126,7 @@ const ProductDetailClient = ({ product }: { product: any }) => {
                   <p className="text-2xl text-rose-700 font-medium">
                     Q{product.salePrice}
                   </p>
-                  <p className="text-lg text-stone-300 line-through">
+                  <p className="text-lg text-carbon-light line-through">
                     Q{product.price}
                   </p>
                 </div>
