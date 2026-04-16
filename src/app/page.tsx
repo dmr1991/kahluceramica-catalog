@@ -28,13 +28,13 @@ export default async function Home() {
         </div>
         <div className="relative z-10 text-center text-white px-6">
           <p className="text-xs md:text-sm tracking-[0.5em] uppercase mb-4 opacity-80">
-            Cerámica artesanal
+            Cerámica Artesanal
           </p>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.2em] mb-6 font-serif">
             KAHLU
           </h1>
           <p className="text-sm md:text-base font-light tracking-wider max-w-md mx-auto mb-10 opacity-90">
-            Piezas únicas hechas a mano, donde la tierra se transforma en arte
+            Piezas decorativas y funcionales únicas modeladas y esmaltadas a mano en Guatemala
           </p>
           <Link
             href="/catalog"
@@ -48,16 +48,17 @@ export default async function Home() {
       {/* Colección Destacada - Datos de Sanity */}
       <ProductSection
         title="Colección Destacada"
-        subtitle="Lo mejor de nuestro taller"
+        subtitle="Una selección especial"
         products={featured.slice(0, 4)}
         linkTo="/catalog"
       />
       {/* Divider quote - Estética artesanal */}
-      <section className="py-20 md:py-28 bg-stone-50">
+      <section className="py-20 md:py-28 bg-crema">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-2xl md:text-3xl font-light italic leading-relaxed text-stone-600 font-serif">
-            "Cada pieza lleva consigo la huella del fuego, la paciencia del
-            torno y la intención de quien la crea."
+            "La cerámica enseña a ir despacio: dejar que las manos escuchen al
+            barro, que la tierra recuerde su forma, y que cada pieza guarde algo
+            del mundo que la inspiró."
           </p>
         </div>
       </section>

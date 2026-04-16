@@ -25,6 +25,7 @@ module.exports = {
         agua: "#7BA9A5",
         "agua-dark": "#5E8E8A",
         crema: "#F5F0EB",
+        "crema-light": "#f1f1f0",
         carbon: "#3D3428",
         "carbon-light": "#6B5E4F",
 

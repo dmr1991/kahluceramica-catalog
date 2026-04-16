@@ -77,7 +77,7 @@ const ProductDetailClient = ({ product }: { product: any }) => {
       <main className="max-w-7xl mx-auto px-6 pt-32 pb-20">
         <Link
           href="/catalog"
-          className="inline-flex items-center gap-2 text-xs tracking-[0.3em] uppercase mb-12 hover:opacity-60 transition-opacity"
+          className="inline-flex items-center gap-2 text-xs tracking-[0.3em] uppercase mb-12 hover:opacity-60 transition-opacity "
         >
           <ArrowLeft className="w-4 h-4" /> Volver al catálogo
         </Link>
@@ -98,7 +98,7 @@ const ProductDetailClient = ({ product }: { product: any }) => {
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`aspect-square bg-stone-50 overflow-hidden border ${currentImageIndex === index ? "border-stone-800" : "border-transparent"}`}
+                    className={`aspect-square bg-stone-50 overflow-hidden border ${currentImageIndex === index ? "border-agua opacity-100" : "border-arenaopacity-80"}`}
                   >
                     <img
                       src={img}
@@ -131,13 +131,13 @@ const ProductDetailClient = ({ product }: { product: any }) => {
                   </p>
                 </div>
               ) : (
-                <p className="text-2xl text-stone-800 font-medium">
+                <p className="text-2xl text-carbon font-medium">
                   Q{product.price}
                 </p>
               )}
             </div>
 
-            <div className="prose prose-sm text-stone-500 font-light leading-relaxed mb-12 italic">
+            <div className="prose prose-sm text-carbon font-light leading-relaxed mb-12 italic">
               <p>
                 {product.description ||
                   "Pieza única modelada a mano con procesos artesanales."}
@@ -151,7 +151,7 @@ const ProductDetailClient = ({ product }: { product: any }) => {
                   setShowForm(!showForm);
                   setIsSuccess(false);
                 }}
-                className="w-full bg-stone-800 text-white py-4 text-xs tracking-[0.3em] uppercase hover:bg-stone-700 transition-colors"
+                className="w-full bg-agua text-white py-4 text-xs tracking-[0.3em] uppercase hover:bg-agua-dark transition-all duration-500 ease-in-out"
               >
                 {showForm
                   ? "Cerrar Formulario"
@@ -161,10 +161,10 @@ const ProductDetailClient = ({ product }: { product: any }) => {
               </button>
 
               <div className="flex flex-col items-center gap-4 pt-6">
-                <div className="flex items-center gap-8 text-stone-400">
+                <div className="flex items-center gap-8 text-carbon">
                   <a
                     href={mailtoLink}
-                    className="hover:text-stone-800 transition-colors"
+                    className="hover:opacity-40 transition-opacity"
                   >
                     <Mail className="w-5 h-5" />
                   </a>
@@ -172,13 +172,13 @@ const ProductDetailClient = ({ product }: { product: any }) => {
                     href="https://instagram.com/kahluceramica"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-stone-800 transition-colors"
+                    className="hover:opacity-40 transition-all duration-500 ease-in-out"
                   >
                     <InstagramIcon className="w-5 h-5" />
                   </a>
                   <button
                     onClick={copyToClipboard}
-                    className="hover:text-stone-800 transition-colors"
+                    className="text-[10px] tracking-widest uppercase cursor-pointer text-carbon hover:opacity-40 transition-all duration-500 ease-in-out"
                   >
                     {copied ? (
                       <Check className="w-4 h-4 text-emerald-600" />
@@ -189,20 +189,20 @@ const ProductDetailClient = ({ product }: { product: any }) => {
                 </div>
                 <p
                   onClick={copyToClipboard}
-                  className="text-[10px] tracking-widest uppercase cursor-pointer hover:text-stone-800 text-stone-400 transition-colors"
+                  className="text-[10px] tracking-widest uppercase cursor-pointer hover:opacity-40 transition-all duration-500 ease-in-out"
                 >
                   {copied ? "¡Correo copiado!" : emailAddress}
                 </p>
               </div>
 
               {showForm && (
-                <div className="mt-8 p-6 border border-stone-100 bg-stone-50/50 animate-in fade-in slide-in-from-top-4">
+                <div className="mt-8 p-6 border border-stone-100 bg-crema animate-in fade-in slide-in-from-top-4">
                   {isSuccess ? (
                     <div className="text-center py-4 space-y-1">
                       <p className="text-xs tracking-widest uppercase text-stone-800">
                         ¡Mensaje enviado!
                       </p>
-                      <p className="text-[10px] tracking-widest uppercase text-stone-400">
+                      <p className="text-[10px] tracking-widest uppercase text-carbon">
                         Te responderé pronto.
                       </p>
                     </div>
@@ -214,25 +214,25 @@ const ProductDetailClient = ({ product }: { product: any }) => {
                         name="nombre"
                         placeholder="NOMBRE"
                         required
-                        className="w-full bg-transparent border-b border-stone-200 py-2 text-sm focus:border-stone-800 outline-none transition-colors placeholder:text-[10px]"
+                        className="w-full bg-transparent border-b border-stone-200 py-2 text-sm focus:border-stone-800 outline-none transition-colors placeholder:text-[10px] placeholder:text-carbon/70"
                       />
                       <input
                         type="email"
                         name="email"
                         placeholder="EMAIL"
                         required
-                        className="w-full bg-transparent border-b border-stone-200 py-2 text-sm focus:border-stone-800 outline-none transition-colors placeholder:text-[10px]"
+                        className="w-full bg-transparent border-b border-stone-200 py-2 text-sm focus:border-stone-800 outline-none transition-colors placeholder:text-[10px] placeholder:text-carbon/70"
                       />
                       <textarea
                         name="mensaje"
                         placeholder="TU MENSAJE..."
                         rows={3}
-                        className="w-full bg-transparent border-b border-stone-200 py-2 text-sm focus:border-stone-800 outline-none transition-colors resize-none placeholder:text-[10px]"
+                        className="w-full bg-transparent border-b border-stone-200 py-2 text-sm focus:border-stone-800 outline-none transition-colors resize-none placeholder:text-[10px] placeholder:text-carbon/70"
                       ></textarea>
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full flex items-center justify-center gap-2 border border-stone-800 text-stone-800 py-3 text-[10px] tracking-[0.3em] uppercase hover:bg-stone-800 hover:text-white transition-all disabled:opacity-50"
+                        className="w-full flex items-center justify-center gap-2 border border-stone-400 text-carbon py-3 text-[10px] tracking-[0.3em] uppercase hover:bg-arena hover:text-carbon transition-all duration-500 ease-in-out disabled:opacity-50"
                       >
                         {isSubmitting ? "Enviando..." : "Enviar"}{" "}
                         <Send className="w-3 h-3" />
