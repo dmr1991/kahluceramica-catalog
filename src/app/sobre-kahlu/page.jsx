@@ -62,7 +62,7 @@ const SobreKahlu = async () => {
       <section className="pt-32 pb-16 md:pt-48 md:pb-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-[10px] tracking-[0.5em] uppercase text-carbon mb-4">
-            La historia detrás del barro
+            La historia detrás de
           </p>
           <h1 className="text-5xl md:text-7xl font-light tracking-[0.6em] uppercase font-serif italic">
             {data?.title || "Kahlu"}
