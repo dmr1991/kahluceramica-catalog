@@ -52,6 +52,12 @@ const Navbar = () => {
           >
             Catálogo
           </Link>
+          <Link
+            href="/sobre-kahlu"
+            className="text-sm tracking-widest uppercase hover:text-primary transition-colors"
+          >
+            KAHLU
+          </Link>
           <a
             href="mailto:kahluceramica@gmail.com"
             className="hover:text-primary transition-colors"
