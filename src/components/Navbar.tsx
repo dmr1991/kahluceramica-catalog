@@ -58,6 +58,12 @@ const Navbar = () => {
           >
             KAHLU
           </Link>
+          <Link
+            href="/workshops"
+            className="text-sm tracking-widest uppercase hover:text-primary transition-colors"
+          >
+            Workshops
+          </Link>
           <a
             href="mailto:kahluceramica@gmail.com"
             className="hover:text-primary transition-colors"
@@ -80,7 +86,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu (Gaveta corregida) */}
+      {/* Mobile menu (Gaveta) */}
       {open && (
         <div className="md:hidden px-6 pt-12 pb-12 space-y-8 bg-background/95 backdrop-blur-md border-b border-border/50 animate-in fade-in slide-in-from-top-2 duration-300">
           <Link
@@ -96,6 +102,20 @@ const Navbar = () => {
             onClick={() => setOpen(false)}
           >
             Catálogo
+          </Link>
+          <Link
+            href="/sobre-kahlu"
+            className="block text-sm tracking-[0.3em] uppercase text-carbon hover:opacity-50 transition-all"
+            onClick={() => setOpen(false)}
+          >
+            KAHLU
+          </Link>
+          <Link
+            href="/workshops"
+            className="block text-sm tracking-[0.3em] uppercase text-carbon hover:opacity-50 transition-all"
+            onClick={() => setOpen(false)}
+          >
+            Workshops
           </Link>
 
           <div className="flex gap-8 pt-4 border-t border-carbon/5">
