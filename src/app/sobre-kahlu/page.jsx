@@ -209,7 +209,7 @@ const SobreKahlu = async () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/catalog"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-carbon text-arena px-8 py-4 text-[10px] tracking-[0.3em] uppercase hover:bg-carbon/90 transition-all rounded-sm shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-carbon text-arena px-8 py-4 text-[10px] tracking-[0.3em] uppercase hover:bg-carbon/80 transition-all rounded-sm shadow-sm"
             >
               Ver catálogo
               <ArrowRight className="w-4 h-4" />

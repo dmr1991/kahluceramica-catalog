@@ -62,8 +62,8 @@ const WorkshopsPage = async () => {
               Workshops
             </h1>
             <p className="text-sm md:text-base text-carbon/80 font-light max-w-xl mx-auto leading-relaxed">
-              Espacios íntimos dedicados a pausar, experimentr con la arcilla y explorar
-              tu creatividad a través del barro modelado a mano.
+              Espacios íntimos dedicados a pausar, experimentar con la arcilla y
+              explorar tu creatividad a través del barro modelado a mano.
             </p>
           </div>
         </section>
@@ -74,28 +74,29 @@ const WorkshopsPage = async () => {
             {workshops && workshops.length > 0 ? (
               <div className="space-y-16 md:space-y-24">
                 {workshops.map((ws) => {
+                  // URL de Sanity sin recorte forzado de altura
                   const wsImageUrl = ws?.coverImage
-                    ? urlFor(ws.coverImage).width(900).height(675).url()
-                    : "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=900&h=675&fit=crop";
+                    ? urlFor(ws.coverImage).auto("format").fit("max").url()
+                    : "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=900&fit=crop";
 
                   const formattedDate = formatWorkshopDate(ws.date);
 
                   return (
                     <article
                       key={ws._id}
-                      className="bg-white/20 p-6 md:p-10 rounded-sm border border-arcilla/10 shadow-sm"
+                      className="bg-white/50 p-6 md:p-10 rounded-sm border border-arcilla/10 shadow-sm"
                     >
                       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                        {/* Portada */}
-                        <div className="lg:col-span-6 aspect-[4/3] bg-white/10 overflow-hidden rounded-sm border border-arcilla/10 relative">
+                        {/* Portada completa sin cortes */}
+                        <div className="lg:col-span-6 min-h-[280px] sm:min-h-[360px] md:min-h-[420px] bg-arena/40 flex items-center justify-center overflow-hidden rounded-sm border border-arcilla/10 relative p-2">
                           <img
                             src={wsImageUrl}
                             alt={ws?.coverImage?.alt || ws.title}
-                            className="w-full h-full object-cover opacity-95"
+                            className="w-full h-full max-h-[450px] object-contain rounded-xs"
                           />
                           <div className="absolute top-4 left-4">
                             <span
-                              className={`text-[9px] tracking-[0.25em] uppercase px-3 py-1.5 rounded-xs ${
+                              className={`text-[9px] tracking-[0.25em] uppercase px-3 py-1.5 rounded-xs shadow-xs ${
                                 ws.isActive
                                   ? "bg-carbon text-arena"
                                   : "bg-arcilla text-crema"
@@ -195,7 +196,7 @@ const WorkshopsPage = async () => {
                                 href="https://instagram.com/kahluceramica"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 border border-carbon/20 px-8 py-3.5 text-[10px] tracking-[0.3em] uppercase hover:bg-white/20 transition-all rounded-sm text-carbon/80"
+                                className="w-full sm:w-auto inline-flex items-center bg-carbon justify-center gap-3 border border-carbon/20 px-8 py-3.5 text-[10px] tracking-[0.3em] uppercase hover:bg-carbon/80 transition-all rounded-sm text-arena/100"
                               >
                                 Consultar próximas fechas
                               </a>
@@ -214,7 +215,7 @@ const WorkshopsPage = async () => {
                             {ws.gallery.map((galImg, gIdx) => (
                               <div
                                 key={gIdx}
-                                className="aspect-square w-24 sm:w-28 bg-white/10 overflow-hidden rounded-sm border border-arcilla/10"
+                                className="aspect-square w-24 sm:w-28 bg-white/40 overflow-hidden rounded-sm border border-arcilla/10"
                               >
                                 <img
                                   src={urlFor(galImg)
@@ -237,7 +238,7 @@ const WorkshopsPage = async () => {
                 })}
               </div>
             ) : (
-              <div className="text-center py-20 bg-white/20 rounded-sm border border-arcilla/10">
+              <div className="text-center py-20 bg-white/50 rounded-sm border border-arcilla/10">
                 <h3 className="text-2xl font-serif italic mb-3">
                   Próximamente nuevas fechas
                 </h3>
