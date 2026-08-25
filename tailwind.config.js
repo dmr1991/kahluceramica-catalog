@@ -18,7 +18,7 @@ module.exports = {
     extend: {
       colors: {
         // TUS COLORES DE MARCA KAHLU
-        arcilla: "#C4B490",
+        arcilla: "#ad9f7f",
         terracota: "#A0623A",
         oliva: "#7B7B3E",
         arena: "#EDE0D4",

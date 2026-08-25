@@ -8,17 +8,36 @@ export default async function CatalogoPage() {
   const initialProducts = await getProducts();
 
   return (
-    /* Cambiamos bg-white por bg-arena (#EDE0D4) 
-       y text-stone-800 por text-carbon (#3D3428)
-    */
-    <main className="min-h-screen bg-arena text-carbon">
-      <Navbar />
-      
-      {/* El componente CatalogClient maneja los filtros y el grid.
-         Asegúrate de que dentro de CatalogClient no haya divs con "bg-white" 
-         que puedan estar tapando este fondo arena.
-      */}
-      <CatalogClient initialProducts={initialProducts} />
+    <main className="min-h-screen bg-arena text-carbon flex flex-col justify-between">
+      <div>
+        <Navbar />
+        <CatalogClient initialProducts={initialProducts} />
+      </div>
+
+      {/* Footer Simple */}
+      <footer className="border-t border-arcilla/40 py-16 bg-white/100">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+          <p className="text-[10px] tracking-[0.3em] uppercase text-arcilla">
+            © 2026 Kahlu Cerámica
+          </p>
+          <div className="flex items-center gap-8 text-[10px] tracking-widest uppercase text-arcilla">
+            <a
+              href="mailto:kahluceramica@gmail.com"
+              className="hover:text-carbon transition-colors"
+            >
+              Email
+            </a>
+            <a
+              href="https://instagram.com/kahluceramica"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-carbon transition-colors"
+            >
+              Instagram
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

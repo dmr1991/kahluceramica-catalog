@@ -57,6 +57,35 @@ export const kahlu = defineType({
         "La cerámica enseña a ir despacio: dejar que las manos escuchen al barro, que la tierra recuerde su forma, y que cada pieza guarde algo del mundo que la inspiró.",
     }),
     defineField({
+      name: "processSteps",
+      title: "Pasos de Mi Proceso (01, 02, 03...)",
+      type: "array",
+      description: "Agrega los pasos del proceso artesanal.",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "step",
+              title: "Número de paso (ej. 01)",
+              type: "string",
+            },
+            {
+              name: "title",
+              title: "Título (ej. Modelado)",
+              type: "string",
+            },
+            {
+              name: "description",
+              title: "Descripción",
+              type: "text",
+              rows: 3,
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: "processGallery",
       title: "Galería de fotos del taller y proceso",
       type: "array",

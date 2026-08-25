@@ -70,7 +70,7 @@ export default async function Home() {
         linkTo="/catalog"
       />
       {/* CTA final */}
-      <section className="py-20 md:py-28 bg-white text-center">
+      <section className="py-20 md:py-28 bg-crema text-center">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-light mb-4 font-serif text-stone-800">
             Todas las piezas disponibles
