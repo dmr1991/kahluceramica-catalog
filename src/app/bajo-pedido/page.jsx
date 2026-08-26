@@ -44,9 +44,10 @@ export default async function MadeToOrderPage() {
               Bajo Pedido
             </h1>
             <p className="text-xs sm:text-sm md:text-base text-carbon/80 font-light max-w-xl mx-auto leading-relaxed mb-8">
-              Piezas fijas con diseños propios de Kahlu Cerámica, modeladas a mano especialmente para ti. Abrimos cupos
-              por ciclo de quema para trabajar cada pieza con dedicación y
-              apegándose a los tiempos de producción de la cerámica.
+              Piezas fijas con diseños propios de Kahlu Cerámica, modeladas a
+              mano especialmente para ti. Abrimos cupos por ciclo de quema para
+              trabajar cada pieza con dedicación y apegándose a los tiempos de
+              producción de la cerámica.
             </p>
 
             <a
@@ -62,7 +63,7 @@ export default async function MadeToOrderPage() {
         </section>
 
         {/* Tiempos y Proceso */}
-        <section className="w-full border-y border-arcilla/10 bg-white/40 py-8 mb-16">
+        <section className="w-full border-y border-arcilla/10 bg-white/50 py-8 mb-16">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             <div className="flex flex-col items-center gap-2">
               <Sparkles className="w-4 h-4 text-arcilla" />
@@ -70,7 +71,8 @@ export default async function MadeToOrderPage() {
                 100% Hecho a Mano
               </p>
               <p className="text-xs text-carbon/70 font-light max-w-xs">
-                Modelado sin moldes industriales, cada pieza es única.
+                Piezas realizadas a mano utilizando distintas técnicas de
+                modelado. Cada pieza es única.
               </p>
             </div>
             <div className="flex flex-col items-center gap-2">
@@ -79,7 +81,8 @@ export default async function MadeToOrderPage() {
                 Tiempos del Barro
               </p>
               <p className="text-xs text-carbon/70 font-light max-w-xs">
-                Tiempo estimado de 3 a 4 semanas para secado y quemas.
+                Tiempo estimado de 8 a 11 semanas para modelado, secado,
+                esmaltado y quemas. Sujeto a ciclos de quema.
               </p>
             </div>
             <div className="flex flex-col items-center gap-2">
@@ -88,8 +91,8 @@ export default async function MadeToOrderPage() {
                 Coordinación directa
               </p>
               <p className="text-xs text-carbon/70 font-light max-w-xs">
-                Llena el formulario con tus piezas de interés y coordinamos
-                detalles.
+                Llena el formulario indicando tus piezas de interés y nos
+                comunicamos contigo para que coordinemos detalles.
               </p>
             </div>
           </div>
@@ -99,7 +102,7 @@ export default async function MadeToOrderPage() {
         <section className="w-full pb-20 sm:pb-28">
           <div className="max-w-6xl w-full mx-auto px-4 sm:px-6">
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-serif italic mb-2">
+              <h2 className="text-3xl sm:text-5xl font-serif italic mb-2">
                 Estilos Disponibles
               </h2>
               <p className="text-xs sm:text-sm text-carbon/70 font-light">
