@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation"; 
 import Link from "next/link";
-
+export const dynamic = "force-dynamic";
 const NotFound = () => {
   const pathname = usePathname(); // Aquí tenemos la ruta actual
 

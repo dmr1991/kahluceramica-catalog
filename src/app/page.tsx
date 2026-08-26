@@ -20,11 +20,11 @@ export default async function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('./1_HERO_2026.jpg')", //IMAGEN DE HERO
+            backgroundImage: "url('./1_HERO_2026.jpg')", //IMAGEN DE HERO
           }}
         >
-          <div className="absolute inset-0 bg-black/70" /> {/* Capa de oscurecimiento OVERLAY para mejorar la legibilidad */}
+          <div className="absolute inset-0 bg-black/70" />{" "}
+          {/* Capa de oscurecimiento OVERLAY para mejorar la legibilidad */}
         </div>
         <div className="relative z-10 text-center text-white px-6">
           <p className="text-xs md:text-sm tracking-[0.5em] uppercase mb-4 opacity-80">
@@ -34,7 +34,8 @@ export default async function Home() {
             KAHLU
           </h1>
           <p className="text-sm md:text-base font-light tracking-wider max-w-md mx-auto mb-10 opacity-90">
-            Piezas decorativas y funcionales únicas modeladas y esmaltadas a mano en Guatemala
+            Piezas decorativas y funcionales únicas modeladas y esmaltadas a
+            mano en Guatemala
           </p>
           <Link
             href="/catalog"
@@ -85,6 +86,29 @@ export default async function Home() {
           >
             Ver catálogo completo
             <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+      {/* Banner a Piezas Bajo Pedido */}
+      <section className="w-full py-16 sm:py-20 border-t border-arcilla/15 bg-white/0">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-carbon/70 mb-3">
+            Producción artesanal por encargo
+          </p>
+          <h3 className="text-2xl sm:text-3xl font-serif italic mb-4">
+            ¿Buscas una pieza del catálogo fijo de Kahlu Cerámica?
+          </h3>
+          <p className="text-xs sm:text-sm text-carbon/75 font-light max-w-md mx-auto leading-relaxed mb-6">
+            Conoce nuestra colección permanente de estilos disponibles para
+            producción bajo encargo, siguiendo los tiempos de producción de la
+            cerámica.
+          </p>
+          <Link
+            href="/bajo-pedido"
+            className="inline-flex items-center gap-2 border border-carbon/30 px-6 py-3 text-[9px] sm:text-[10px] tracking-[0.25em] uppercase hover:bg-carbon hover:text-arena transition-all rounded-sm"
+          >
+            Ver piezas bajo pedido
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
       </section>

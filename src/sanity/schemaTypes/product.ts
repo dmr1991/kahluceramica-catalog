@@ -12,6 +12,14 @@ export default defineType({
       validation: (Rule) => Rule.required().error("El nombre es obligatorio"),
     }),
     defineField({
+      name: "orderRank",
+      title: "Posición / Orden de prioridad",
+      type: "number",
+      description:
+        "Ingresa 1 para mostrarla primero, 2 para segundo, etc. (Opcional, por defecto 99)",
+      initialValue: 99,
+    }),
+    defineField({
       name: "isAvailable",
       title: "¿Mostrar en catálogo?",
       type: "boolean",

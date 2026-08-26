@@ -2,7 +2,7 @@
 import { getProductById } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import ProductDetailClient from "@/components/ProductDetailClient";
-
+export const dynamic = "force-dynamic";
 export default async function ProductPage({
   params,
 }: {

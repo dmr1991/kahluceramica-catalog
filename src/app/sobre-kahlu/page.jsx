@@ -3,6 +3,7 @@ import { ArrowRight, Instagram } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+export const dynamic = "force-dynamic";
 
 // Consulta GROQ para obtener la información de Sanity
 async function getKahluData() {

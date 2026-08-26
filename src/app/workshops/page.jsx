@@ -13,6 +13,7 @@ import {
 import Navbar from "@/components/Navbar";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+export const dynamic = "force-dynamic";
 
 // Número de WhatsApp configurado
 const WHATSAPP_PHONE_NUMBER = "50245200989";
