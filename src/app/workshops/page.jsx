@@ -275,7 +275,7 @@ const WorkshopsPage = async () => {
                     href="https://facebook.com/kahluceramica"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-carbon/20 px-6 py-3.5 text-[9px] sm:text-[10px] tracking-[0.25em] uppercase hover:bg-white/40 transition-all rounded-sm text-carbon"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-carbon/20 px-6 py-3.5 text-[9px] sm:text-[10px] tracking-[0.25em] uppercase hover:bg-terracota hover:text-arenatransition-all rounded-sm text-carbon"
                   >
                     <Facebook className="w-3.5 h-3.5" />
                     Facebook
@@ -287,16 +287,16 @@ const WorkshopsPage = async () => {
         </section>
       </div>
 
-      {/* Footer */}
-      <footer className="w-full border-t border-arcilla/40 py-12 sm:py-16 bg-white/100">
-        <div className="max-w-7xl w-full mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
-          <p className="text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] uppercase text-arcilla text-center md:text-left">
-            © 2026 Kahlu Cerámica
+     {/* Footer minimalista */}
+      <footer className="border-t border-stone-100 py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-[10px] tracking-[0.4em] uppercase text-carbon-400">
+            © 2026 KAHLU CERÁMICA
           </p>
-          <div className="flex items-center gap-8 text-[9px] sm:text-[10px] tracking-widest uppercase text-arcilla">
+          <div className="flex items-center gap-6 text-[10px] tracking-widest uppercase text-carbon-400">
             <a
               href="mailto:kahluceramica@gmail.com"
-              className="hover:text-carbon transition-colors"
+              className="hover:text-stone-400 transition-colors"
             >
               Email
             </a>
@@ -304,7 +304,7 @@ const WorkshopsPage = async () => {
               href="https://instagram.com/kahluceramica"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-carbon transition-colors"
+              className="hover:text-stone-400 transition-colors"
             >
               Instagram
             </a>

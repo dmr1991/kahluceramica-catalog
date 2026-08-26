@@ -13,7 +13,7 @@ import { getMadeToOrderProducts } from "@/sanity/lib/queries";
 export const dynamic = "force-dynamic";
 
 // Reemplaza con el enlace público de tu Google Form
-const GOOGLE_FORM_URL = "https://forms.gle/TU_GOOGLE_FORM_AQUI";
+const GOOGLE_FORM_URL = "https://forms.gle/d3QRuen96UAeNtZq5";
 
 export default async function MadeToOrderPage() {
   const products = await getMadeToOrderProducts();
@@ -63,34 +63,34 @@ export default async function MadeToOrderPage() {
         </section>
 
         {/* Tiempos y Proceso */}
-        <section className="w-full border-y border-arcilla/10 bg-white/50 py-8 mb-16">
+        <section className="w-full border-y border-arcilla/10 bg-white/60 py-8 mb-16">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             <div className="flex flex-col items-center gap-2">
               <Sparkles className="w-4 h-4 text-arcilla" />
-              <p className="text-[10px] tracking-widest uppercase font-medium">
+              <p className="text-[12px] tracking-widest uppercase font-medium">
                 100% Hecho a Mano
               </p>
-              <p className="text-xs text-carbon/70 font-light max-w-xs">
+              <p className="text-xs text-carbon/80 font-normal max-w-xs">
                 Piezas realizadas a mano utilizando distintas técnicas de
                 modelado. Cada pieza es única.
               </p>
             </div>
             <div className="flex flex-col items-center gap-2">
               <Clock className="w-4 h-4 text-arcilla" />
-              <p className="text-[10px] tracking-widest uppercase font-medium">
+              <p className="text-[12px] tracking-widest uppercase font-medium">
                 Tiempos del Barro
               </p>
-              <p className="text-xs text-carbon/70 font-light max-w-xs">
+              <p className="text-xs text-carbon/80 font-normal max-w-xs">
                 Tiempo estimado de 8 a 11 semanas para modelado, secado,
                 esmaltado y quemas. Sujeto a ciclos de quema.
               </p>
             </div>
             <div className="flex flex-col items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-arcilla" />
-              <p className="text-[10px] tracking-widest uppercase font-medium">
+              <p className="text-[12px] tracking-widest uppercase font-medium">
                 Coordinación directa
               </p>
-              <p className="text-xs text-carbon/70 font-light max-w-xs">
+              <p className="text-xs text-carbon/80 font-normal max-w-xs">
                 Llena el formulario indicando tus piezas de interés y nos
                 comunicamos contigo para que coordinemos detalles.
               </p>

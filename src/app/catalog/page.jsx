@@ -33,7 +33,7 @@ export default async function CatalogoPage() {
           </p>
           <Link
             href="/bajo-pedido"
-            className="inline-flex items-center gap-2 border border-carbon/30 px-6 py-3 text-[9px] sm:text-[10px] tracking-[0.25em] uppercase hover:bg-carbon hover:text-arena transition-all rounded-sm"
+            className="inline-flex items-center gap-2 border bg-terracota text-white border-carbon/30 px-6 py-3 text-[9px] sm:text-[10px] tracking-[0.25em] uppercase hover:bg-carbon hover:text-arena transition-all rounded-sm"
           >
             Ver piezas bajo pedido
             <ArrowRight className="w-3.5 h-3.5" />
@@ -41,16 +41,16 @@ export default async function CatalogoPage() {
         </div>
       </section>
 
-      {/* Footer Simple */}
-      <footer className="border-t border-arcilla/40 py-16 bg-white/100">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-arcilla">
-            © 2026 Kahlu Cerámica
+      {/* Footer minimalista */}
+      <footer className="border-t border-stone-100 py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-[10px] tracking-[0.4em] uppercase text-carbon-400">
+            © 2026 KAHLU CERÁMICA
           </p>
-          <div className="flex items-center gap-8 text-[10px] tracking-widest uppercase text-arcilla">
+          <div className="flex items-center gap-6 text-[10px] tracking-widest uppercase text-carbon-400">
             <a
               href="mailto:kahluceramica@gmail.com"
-              className="hover:text-carbon transition-colors"
+              className="hover:text-stone-400 transition-colors"
             >
               Email
             </a>
@@ -58,7 +58,7 @@ export default async function CatalogoPage() {
               href="https://instagram.com/kahluceramica"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-carbon transition-colors"
+              className="hover:text-stone-400 transition-colors"
             >
               Instagram
             </a>

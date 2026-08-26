@@ -188,7 +188,7 @@ const SobreKahlu = async () => {
                 <h3 className="text-xl font-serif font-light mb-4 italic">
                   {item.title}
                 </h3>
-                <p className="text-xs text-carbon/60 leading-relaxed max-w-xs mx-auto font-light">
+                <p className="text-xs text-carbon/90 leading-relaxed max-w-xs mx-auto font-light">
                   {item.description}
                 </p>
               </div>
@@ -203,7 +203,7 @@ const SobreKahlu = async () => {
           <h2 className="text-3xl md:text-4xl font-serif font-light mb-4 italic">
             ¿Te gustaría comprar una pieza o explotar tu lado creativo en un workshop?
           </h2>
-          <p className="text-carbon/60 text-sm mb-10 max-w-md mx-auto font-light leading-relaxed">
+          <p className="text-carbon/80 text-sm mb-10 max-w-md mx-auto font-light leading-relaxed">
             Lleva una pieza única Kahlu a tu espacio o acompáñame en el taller a crear
             la tuya desde cero.
           </p>
@@ -235,23 +235,24 @@ const SobreKahlu = async () => {
         </div>
       </section>
 
-      {/* Footer Simple */}
-      <footer className="border-t border-arcilla/40 py-16 bg-white/100">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-arcilla">
-            © 2026 Kahlu Cerámica
+      {/* Footer minimalista */}
+      <footer className="border-t border-stone-100 py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-[10px] tracking-[0.4em] uppercase text-carbon-400">
+            © 2026 KAHLU CERÁMICA
           </p>
-          <div className="flex items-center gap-8 text-[10px] tracking-widest uppercase text-arcilla">
+          <div className="flex items-center gap-6 text-[10px] tracking-widest uppercase text-carbon-400">
             <a
               href="mailto:kahluceramica@gmail.com"
-              className="hover:text-carbon transition-colors"
+              className="hover:text-stone-400 transition-colors"
             >
               Email
             </a>
             <a
               href="https://instagram.com/kahluceramica"
               target="_blank"
-              className="hover:text-carbon transition-colors"
+              rel="noopener noreferrer"
+              className="hover:text-stone-400 transition-colors"
             >
               Instagram
             </a>
