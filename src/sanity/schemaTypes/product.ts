@@ -12,6 +12,14 @@ export default defineType({
       validation: (Rule) => Rule.required().error("El nombre es obligatorio"),
     }),
     defineField({
+      name: "isAvailable",
+      title: "¿Mostrar en catálogo?",
+      type: "boolean",
+      description:
+        "Activa este switch para que la pieza se muestre en la web. Desactívalo para ocultarla sin borrarla.",
+      initialValue: true,
+    }),
+    defineField({
       name: "code",
       title: "Código (SKU)",
       type: "string",
