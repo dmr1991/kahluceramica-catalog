@@ -2,9 +2,9 @@
 
 import { client } from "./client";
 
-// Función para traer solo los productos disponibles (Catálogo e Inicio)
+// Función para traer solo los productos disponibles de ENTREGA INMEDIATA (Catálogo e Inicio)
 export async function getProducts() {
-  const query = `*[_type == "product" && isAvailable == true] | order(orderRank asc, date desc) {
+  const query = `*[_type == "product" && isAvailable == true && isMadeToOrder != true] | order(orderRank asc, date desc) {
     _id,
     name,
     code,
